@@ -1,10 +1,8 @@
 from abc import ABC, abstractmethod
 from util.tipo import Tipo
-from valor import Valor
-
 class Expressao(ABC):
     @abstractmethod
-    def avaliar(self) -> Valor:
+    def avaliar(self) : 
         pass
     
     @abstractmethod

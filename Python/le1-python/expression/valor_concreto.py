@@ -1,6 +1,6 @@
 from typing import TypeVar, Generic, Any
 from abc import ABC
-from valor import Valor
+from expression.valor import Valor
 
 # T representa o tipo interno (int, str, bool)
 T = TypeVar('T')

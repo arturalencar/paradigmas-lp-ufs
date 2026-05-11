@@ -1,8 +1,8 @@
 from abc import ABC, abstractmethod
 from typing import Any
-from .expressao import Expressao
-from .valor_inteiro import ValorInteiro
-from .valor_booleano import ValorBooleano
+from expression.expressao import Expressao
+from expression.valor_inteiro import ValorInteiro
+from expression.valor_booleano import ValorBooleano
 from util.tipo import Tipo
 
 # ExpUnaria.java

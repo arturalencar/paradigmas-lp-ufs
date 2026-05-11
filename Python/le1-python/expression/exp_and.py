@@ -1,7 +1,7 @@
 from typing import cast
 
-from .exp_binaria import ExpBinaria
-from .valor_booleano import ValorBooleano
+from expression.exp_binaria import ExpBinaria
+from expression.valor_booleano import ValorBooleano
 from util.tipo import Tipo
 
 # ExpAnd.java

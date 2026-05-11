@@ -1,6 +1,6 @@
-from exp_unaria import ExpUnaria
-from expressao import Expressao
-from .valor_inteiro import ValorInteiro
+from expression.exp_unaria import ExpUnaria
+from expression.expressao import Expressao
+from expression.valor_inteiro import ValorInteiro
 from util.tipo import Tipo
 
 # ExpLength.java

@@ -1,6 +1,6 @@
 from typing import TypeVar, Generic, Any
 from abc import ABC, abstractmethod
-from .expressao import Expressao
+from expression.expressao import Expressao
 
 # Valor.java (Interface pura vira uma classe base ou Protocol)
 class Valor(Expressao, ABC):

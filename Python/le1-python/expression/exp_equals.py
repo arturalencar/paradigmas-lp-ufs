@@ -1,8 +1,8 @@
 from typing import cast
 
-from .exp_binaria import ExpBinaria
-from .valor_booleano import ValorBooleano
-from .valor_string import ValorString
+from expression.exp_binaria import ExpBinaria
+from expression.valor_booleano import ValorBooleano
+from expression.valor_string import ValorString
 from util.tipo import Tipo
 
 # ExpEquals.java

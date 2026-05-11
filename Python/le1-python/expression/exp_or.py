@@ -1,9 +1,9 @@
 from typing import cast
 
-from .exp_binaria import ExpBinaria
-from .valor_booleano import ValorBooleano
-from .valor_string import ValorString
-from .valor_inteiro import ValorInteiro # Para suporte a tipos concretos
+from expression.exp_binaria import ExpBinaria
+from expression.valor_booleano import ValorBooleano
+from expression.valor_string import ValorString
+from expression.valor_inteiro import ValorInteiro  # Para suporte a tipos concretos
 from util.tipo import Tipo
 
 # ExpOr.java

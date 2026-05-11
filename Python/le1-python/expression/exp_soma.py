@@ -1,7 +1,7 @@
 from typing import cast
 from expression.exp_binaria import ExpBinaria
 from expression.valor_inteiro import ValorInteiro
-from expressao import Expressao
+from expression.expressao import Expressao
 from util.tipo import Tipo;
 
 class ExpSoma(ExpBinaria):

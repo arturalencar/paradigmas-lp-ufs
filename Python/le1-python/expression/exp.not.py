@@ -1,6 +1,6 @@
-from exp_unaria import ExpUnaria
-from expressao import Expressao
-from .valor_booleano import ValorBooleano
+from expression.exp_unaria import ExpUnaria
+from expression.expressao import Expressao
+from expression.valor_booleano import ValorBooleano
 from util.tipo import Tipo
 
 # ExpNot.java
