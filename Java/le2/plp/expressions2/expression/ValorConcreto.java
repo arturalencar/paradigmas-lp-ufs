@@ -1,6 +1,8 @@
-package le1.plp.expressions1.expression;
+package le2.plp.expressions2.expression;
 
-//import le1.plp.expressions1.expression.Valor;
+//import le2.plp.expressions2.expression.Valor;
+import le2.plp.expressions2.memory.AmbienteCompilacao;
+import le2.plp.expressions2.memory.AmbienteExecucao;
 
 /**
  * @author bldb, efas, jcbr, srmq
@@ -8,7 +10,6 @@ package le1.plp.expressions1.expression;
  * This class groups different types of ValorConcreto.
  */
 public abstract class ValorConcreto<T> implements Valor {
-	
 	
 	private T valor;
 
@@ -36,9 +37,7 @@ public abstract class ValorConcreto<T> implements Valor {
 
 	
 	/**
-	 * Determina igualdade entre  objetos desta classe\
-	 * 
-	 * 
+	 * Determina igualdade entre  objetos desta classe
 	 */
 	public boolean isEquals(ValorConcreto<T> obj) {
 		return valor().equals(obj.valor());
@@ -47,22 +46,22 @@ public abstract class ValorConcreto<T> implements Valor {
 	}
 	
 	/**
-	 * Retorna o valor deste valor primitivo, i.e., ele mesmo.
+	 * Retorna o valor deste valor primitivo, i.e, ele mesmo.
 	 */
-	public Valor avaliar () {
+	public Valor avaliar(AmbienteExecucao amb) {
 		return this;
 	}
-
 	
-
 	/**
 	 * Realiza a verificacao de tipos desta expressao.
 	 * Ser&aacute; sempre v&aacute;lida.
 	 *
+	 * @param amb o ambiente de compila��o.
 	 * @return <code>true</code> se os tipos da expressao sao validos;
 	 *          <code>false</code> caso contrario.
 	 */
-	public boolean checaTipo() {
+	public boolean checaTipo(AmbienteCompilacao amb) {
 		return true;
 	}
+
 }
