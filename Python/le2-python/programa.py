@@ -1,5 +1,5 @@
-from contexto_execucao import ContextoExecucao
-from contexto_compilacao import ContextoCompilacao
+from memory.contexto_execucao import ContextoExecucao
+from memory.contexto_compilacao import ContextoCompilacao
 
 
 class Programa:

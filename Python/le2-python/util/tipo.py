@@ -19,10 +19,7 @@ class Tipo:
     TIPO_INDEFINIDO = None
 
     def __init__(self, tipo=None, prox=None):
-        """
-        No Python, como não há sobrecarga de métodos, centralizamos os construtores aqui.
-        Se tipo for None, assume todos os tipos (Equivalente ao EnumSet.allOf).
-        """
+
         if tipo is None:
             # Se for passado apenas o próximo ou nada, assume todos os tipos do Enum
             if isinstance(tipo, Tipo) or tipo is None:
