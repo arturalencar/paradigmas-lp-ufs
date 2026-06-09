@@ -54,7 +54,7 @@ public class ExpDeclaracao implements Expressao{
 	/**
 	 * Realiza a verificacao de tipos desta expressao.
 	 *
-	 * @param amb o ambiente de compilação.
+	 * @param amb o ambiente de compilaï¿½ï¿½o.
 	 * @return <code>true</code> se os tipos da expressao sao validos;
 	 *          <code>false</code> caso contrario.
 	 * @exception VariavelNaoDeclaradaException se existir um identificador
@@ -125,7 +125,7 @@ public class ExpDeclaracao implements Expressao{
 	/**
 	 * Retorna os tipos possiveis desta expressao.
 	 *
-	 * @param amb o ambiente de compilação.
+	 * @param amb o ambiente de compilaï¿½ï¿½o.
 	 * @return os tipos possiveis desta expressao.
 	 * @exception VariavelNaoDeclaradaException se existir um identificador
 	 *          nao declarado no ambiente.
