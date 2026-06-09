@@ -1,4 +1,4 @@
-from expressao_complexa import ExpressaoComplexa
+from .expressao_complexa import ExpressaoComplexa
 
 
 class Expressao(ExpressaoComplexa):

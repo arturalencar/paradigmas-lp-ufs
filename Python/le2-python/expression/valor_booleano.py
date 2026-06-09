@@ -1,4 +1,4 @@
-from valor_concreto import ValorConcreto
+from .valor_concreto import ValorConcreto
 from util.tipo import Tipo
 
 

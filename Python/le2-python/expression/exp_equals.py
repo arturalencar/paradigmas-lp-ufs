@@ -1,5 +1,5 @@
-from exp_binaria import ExpBinaria
-from valor_booleano import ValorBooleano
+from .exp_binaria import ExpBinaria
+from .valor_booleano import ValorBooleano
 from util.tipo import Tipo
 
 

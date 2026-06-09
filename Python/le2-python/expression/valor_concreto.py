@@ -1,5 +1,5 @@
 from abc import ABC
-from expressao import Expressao
+from .expressao import Expressao
 
 
 class ValorConcreto(Expressao, ABC):

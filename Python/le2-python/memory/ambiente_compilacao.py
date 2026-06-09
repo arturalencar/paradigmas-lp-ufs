@@ -1,6 +1,5 @@
-from ambiente_compilacao import AmbienteCompilacao
+from .ambiente import Ambiente
 
-
-class AmbienteCompilacao(AmbienteCompilacao):
+class AmbienteCompilacao(Ambiente):
 
     pass

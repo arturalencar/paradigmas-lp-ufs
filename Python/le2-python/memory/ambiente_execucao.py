@@ -1,5 +1,5 @@
 from abc import abstractmethod
-from ambiente import Ambiente
+from .ambiente import Ambiente
 
 
 class AmbienteExecucao(Ambiente):

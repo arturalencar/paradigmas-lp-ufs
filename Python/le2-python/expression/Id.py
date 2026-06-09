@@ -1,4 +1,4 @@
-from expressao import Expressao
+from .expressao import Expressao
 from util.tipo import Tipo
 
 

@@ -1,5 +1,5 @@
-from contexto import Contexto
-from ambiente_execucao import AmbienteExecucao
+from .contexto import Contexto
+from .ambiente_execucao import AmbienteExecucao
 
 
 class ContextoExecucao(Contexto, AmbienteExecucao):
