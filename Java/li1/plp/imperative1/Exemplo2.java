@@ -3,6 +3,8 @@ package li1.plp.imperative1;
 import li1.plp.expressions2.expression.ExpSoma;
 import li1.plp.expressions2.expression.Id;
 import li1.plp.expressions2.expression.ValorInteiro;
+import li1.plp.expressions2.memory.IdentificadorJaDeclaradoException;
+import li1.plp.expressions2.memory.IdentificadorNaoDeclaradoException;
 import li1.plp.imperative1.command.Comando;
 import li1.plp.imperative1.command.ComandoDeclaracao;
 import li1.plp.imperative1.command.SequenciaComando;
@@ -11,6 +13,8 @@ import li1.plp.imperative1.declaration.DeclaracaoComposta;
 import li1.plp.imperative1.declaration.DeclaracaoVariavel;
 import li1.plp.imperative1.memory.ContextoCompilacaoImperativa;
 import li1.plp.imperative1.memory.ContextoExecucaoImperativa;
+import li1.plp.imperative1.memory.EntradaVaziaException;
+import li1.plp.imperative1.memory.ErroTipoEntradaException;
 import li1.plp.imperative1.memory.ListaValor;
 
 public class Exemplo2 {
@@ -56,8 +60,22 @@ public class Exemplo2 {
             } else {
                 System.out.println("Erro de tipo no Exemplo 2!");
             }
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (IdentificadorJaDeclaradoException e) {
+            System.err.println("Erro!! Identificador já declarado!");
+            System.err.println("Detalhes: " + e.getMessage());
+            
+        } catch (IdentificadorNaoDeclaradoException e) {
+            System.err.println("Erro!! Identificador não declarada!");
+            System.err.println("Detalhes: " + e.getMessage());
+            
+        } catch (EntradaVaziaException e) {
+            System.err.println("Erro! Nenhuma entrada foi fornecida!");
+            System.err.println("Detalhes: " + e.getMessage());
+            
+        } catch (ErroTipoEntradaException e) {
+            System.err.println("Erro! O tipo de dado na entrada nao corresponde!");
+            System.err.println("Detalhes: " + e.getMessage());
         }
+
     }
 }

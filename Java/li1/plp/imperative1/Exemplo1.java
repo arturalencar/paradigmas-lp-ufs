@@ -9,6 +9,11 @@ import li1.plp.imperative1.declaration.DeclaracaoVariavel;
 import li1.plp.imperative1.memory.ContextoCompilacaoImperativa;
 import li1.plp.imperative1.memory.ContextoExecucaoImperativa;
 import li1.plp.imperative1.memory.ListaValor;
+import li1.plp.expressions2.memory.IdentificadorJaDeclaradoException;
+import li1.plp.expressions2.memory.IdentificadorNaoDeclaradoException;
+import li1.plp.imperative1.memory.EntradaVaziaException;
+import li1.plp.imperative1.memory.ErroTipoEntradaException;
+
 
 public class Exemplo1 {
 
@@ -34,8 +39,22 @@ public class Exemplo1 {
             } else {
                 System.out.println("Erro de tipo no Exemplo 1!");
             }
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (IdentificadorJaDeclaradoException e) {
+            System.err.println("Erro!! Identificador já declarado!");
+            System.err.println("Detalhes: " + e.getMessage());
+            
+        } catch (IdentificadorNaoDeclaradoException e) {
+            System.err.println("Erro!! Identificador não declarada!");
+            System.err.println("Detalhes: " + e.getMessage());
+            
+        } catch (EntradaVaziaException e) {
+            System.err.println("Erro! Nenhuma entrada foi fornecida!");
+            System.err.println("Detalhes: " + e.getMessage());
+            
+        } catch (ErroTipoEntradaException e) {
+            System.err.println("Erro! O tipo de dado na entrada nao corresponde!");
+            System.err.println("Detalhes: " + e.getMessage());
         }
+
     }
 }
