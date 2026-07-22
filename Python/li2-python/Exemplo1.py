@@ -16,7 +16,7 @@ from declaration.declaracao_procedimento import DeclaracaoProcedimento
 from declaration.def_procedimento import DefProcedimento
 from declaration.lista_declaracao_parametro import ListaDeclaracaoParametro
 from memory.contexto_execucao_imperativa2 import ContextoExecucaoImperativa2
-from programa import Programa
+from Programa import Programa
 
 def executar(descricao, prog, ambiente):
     print("-" * 50)
