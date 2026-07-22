@@ -1,12 +1,14 @@
-package li2.plp.expressions2.expression;
+package plp.expressions2.expression;
 
-import li2.plp.expressions1.util.Tipo;
-import li2.plp.expressions2.memory.AmbienteCompilacao;
-import li2.plp.expressions2.memory.AmbienteExecucao;
-import li2.plp.expressions2.memory.VariavelNaoDeclaradaException;
+import java.io.Serializable;
 
+import plp.expressions1.util.Tipo;
+import plp.expressions2.memory.AmbienteCompilacao;
+import plp.expressions2.memory.AmbienteExecucao;
+import plp.expressions2.memory.VariavelNaoDeclaradaException;
+import plp.functional2.expression.ValorIrredutivel;
 
-public class Id implements Expressao {
+public class Id implements Expressao, Serializable{
 
 	private String idName;
 
@@ -92,7 +94,13 @@ public class Id implements Expressao {
 	public Expressao reduzir(AmbienteExecucao ambiente) {
 		try {
 			Valor valor = ambiente.get(this);
+			
+			if (valor instanceof ValorIrredutivel) {
+				return this;
+			}
+						
 			return valor.clone();
+			
 		} catch (VariavelNaoDeclaradaException e) {
 			return this;
 		}
