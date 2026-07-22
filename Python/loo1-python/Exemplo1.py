@@ -43,12 +43,14 @@ def executar_exemplo(prog, descricao, ambiente):
         else:
             print("Erro de tipo: execucao abortada.")
     except Exception as e:
-        print("Excecao capturada:", e)
+        import traceback
+        print("Excecao capturada: " + str(e))
+        traceback.print_exc()
     print("-" * 50)
 
 if __name__ == "__main__":
     # int valor = 1;
-    dec_valor = DeclaracaoVariavel(Id("valor"), ValorInteiro(1))
+    dec_valor = DeclaracaoVariavel(TipoPrimitivo.INTEIRO, Id("valor"), ValorInteiro(1))
 
     # proc print() { write(this.valor) }
     write_valor = Write(AcessoAtributoThis(This(), Id("valor")))
@@ -84,6 +86,9 @@ if __name__ == "__main__":
 
     # Programa
     prog = Programa(dec_classe, com_declaracao)
+    amb_comp = ContextoCompilacaoOO1(ListaValor())
+    print("dec_classe.checaTipo:", dec_classe.checaTipo(amb_comp))
+    print("com_declaracao.checaTipo:", com_declaracao.checaTipo(amb_comp))
 
     # Executar
     executar_exemplo(prog, "Contador c := new Contador; c.inc(); c.print();", ContextoExecucaoOO1())

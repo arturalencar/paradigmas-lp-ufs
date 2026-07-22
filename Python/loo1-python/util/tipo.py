@@ -22,7 +22,7 @@ class Tipo(ABC):
         pass
 
     @abstractmethod
-    def eValido(self) -> bool:
+    def eValido(self, ambiente=None) -> bool:
         pass
 
     @abstractmethod

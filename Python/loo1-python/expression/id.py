@@ -21,6 +21,9 @@ class Id(Expressao):
     def getIdName(self) -> str:
         return self.idName
 
+    def getId(self):
+        return self
+
     def setIdName(self, idName: str):
         self.idName = idName
 

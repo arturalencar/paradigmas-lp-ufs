@@ -29,7 +29,7 @@ class TipoPrimitivo(Tipo):
                 ret = tipo.eIgual(self)
         return ret
 
-    def eValido(self) -> bool:
+    def eValido(self, ambiente=None) -> bool:
         return self.nome is not None and len(self.nome) > 0
 
     def intersecao(self, outroTipo: Tipo) -> Tipo:

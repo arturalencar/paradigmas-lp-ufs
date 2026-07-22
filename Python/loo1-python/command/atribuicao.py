@@ -19,7 +19,11 @@ class Atribuicao(Comando):
 
     def checaTipo(self, ambiente):
         from util.tipo_classe import TipoClasse
-        return self.expressao.checaTipo(ambiente) and (
-            self.av.getTipo(ambiente) == self.expressao.getTipo(ambiente) or
-            self.expressao.getTipo(ambiente) == TipoClasse.TIPO_NULL
+        res_exp = self.expressao.checaTipo(ambiente)
+        tipo_av = self.av.getTipo(ambiente)
+        tipo_exp = self.expressao.getTipo(ambiente)
+        print("Atribuicao checaTipo:", res_exp, tipo_av.getNome(), tipo_exp.getNome())
+        return res_exp and (
+            tipo_av == tipo_exp or
+            tipo_exp == TipoClasse.TIPO_NULL
         )

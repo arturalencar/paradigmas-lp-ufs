@@ -14,3 +14,6 @@ class ValorNull:
     def getTipo(self, ambiente):
         from util.tipo_classe import TipoClasse
         return TipoClasse.TIPO_NULL
+
+    def isEquals(self, obj):
+        return isinstance(obj, ValorNull)

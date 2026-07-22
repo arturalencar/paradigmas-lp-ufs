@@ -15,4 +15,7 @@ class DecProcedimentoComposta(DecProcedimento):
         return self.d2.elabora(self.d1.elabora(ambiente))
 
     def checaTipo(self, ambiente):
-        return self.d1.checaTipo(ambiente) and self.d2.checaTipo(self.d1.elabora(ambiente))
+        res1 = self.d1.checaTipo(ambiente)
+        res2 = self.d2.checaTipo(ambiente)
+        print("DecProcedimentoComposta:", res1, res2)
+        return res1 and res2

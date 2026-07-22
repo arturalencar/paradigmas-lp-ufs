@@ -7,17 +7,35 @@ from exception.objeto_nao_declarado_exception import ObjetoNaoDeclaradoException
 from expression.valor_ref import ValorRef
 
 class ContextoExecucaoOO1(ContextoExecucaoImperativa, AmbienteExecucaoOO1):
-    def __init__(self, entrada=None):
-        super().__init__(entrada)
-        self.map_def_classe = {}
-        self.map_objetos = {}
-        self.prox_ref = ValorRef(ValorRef.VALOR_INICIAL)
+    def __init__(self, ambiente_ou_entrada=None):
+        super().__init__(ambiente_ou_entrada if not isinstance(ambiente_ou_entrada, AmbienteExecucaoOO1) else None)
+        if isinstance(ambiente_ou_entrada, AmbienteExecucaoOO1):
+            ambiente = ambiente_ou_entrada
+            self.prox_ref = ambiente.getRef()
+            self.map_objetos = ambiente.getMapObjetos()
+            self.map_def_classe = ambiente.getMapDefClasse()
+            self.entrada = ambiente.getEntrada()
+            self.saida = ambiente.getSaida()
+            self.pilha = []
+            from expression.id import Id
+            from expression.valor_null import ValorNull
+            self.pilha.append({Id("this"): ValorNull()})
+        else:
+            self.map_def_classe = {}
+            self.map_objetos = {}
+            self.prox_ref = ValorRef(ValorRef.VALOR_INICIAL)
 
     def getMapDefClasse(self):
         return self.map_def_classe
 
     def getMapObjetos(self):
         return self.map_objetos
+
+    def getEntrada(self):
+        return self.entrada
+
+    def getSaida(self):
+        return self.saida
 
     def mapDefClasse(self, idArg, defClasse):
         if idArg in self.map_def_classe:
@@ -48,3 +66,6 @@ class ContextoExecucaoOO1(ContextoExecucaoImperativa, AmbienteExecucaoOO1):
         if self.prox_ref is None:
             self.prox_ref = ValorRef(ValorRef.VALOR_INICIAL)
         return self.prox_ref
+
+    def getValor(self, idArg):
+        return self.get(idArg)

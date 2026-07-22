@@ -19,17 +19,11 @@ class DecProcedimentoSimples(DecProcedimento):
         return ambiente
 
     def checaTipo(self, ambiente):
-        resposta = False
-        ambiente.incrementa()
-        ambiente.map(self.nome, Procedimento(self.parametros_formais, self.comando))
-        try:
-            if self.parametros_formais.checaTipo(ambiente):
-                ambiente_aux = self.parametros_formais.elabora(ambiente)
-                if self.comando.checaTipo(ambiente_aux):
-                    resposta = True
-        except Exception:
-            resposta = False
-        finally:
+        if self.parametros_formais.checaTipo(ambiente):
+            ambiente.incrementa()
+            ambiente = self.parametros_formais.elabora(ambiente)
+            res = self.comando.checaTipo(ambiente)
             ambiente.restaura()
-            
-        return resposta
+            return res
+        else:
+            return False
